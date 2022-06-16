@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form</title>
+</head>
+<body>
+<style type="text/css">
+body{
+	background-size:100%;
+}
+table{
+	background-color:pink;
+	margin-left:500px;
+	margin-right:100px;
+	margin-top:50px;
+	margin-bottom:60px;
+	border:2px solid black;
+	line-height:50px;
+
+}	
+</style>
+<form onsubmit="return validate()">
+<table>
+	<tr>
+		<th colspan="2" style="text-align: center">Registration form</th></tr>
+	<tr>
+		<td>Name</td><th><input type="text" name="name" id="name" placeholder="enter the name"></th></tr>
+	<tr>
+		<td>Address</td><th><textarea id="addr" placeholder="enter the Address"></textarea></th>
+	</tr>
+	<tr>
+		<td>Email</td><th><input type="email" name="email" id="email" placeholder="enter the email"></th>
+	</tr>
+	<tr>
+		<td>Password</td><th><input type="Password" id="pass" placeholder="enter the Password"></th>
+
+	</tr>
+	<tr>
+		<td>Gender</td><th><input type="radio"  id="ma1" name="male">male
+							<input type="radio" id="fe1" name="male">Female</th>
+
+	</tr>
+	<tr>
+		<td>Course</td><th><input type="checkbox" name="course[]" value="">Diploma
+			
+							<input type="checkbox" name="course[]" value="">BTech
+							<input type="checkbox" name="course[]" value="">BCA
+							<input type="checkbox" name="course[]" value="">MCA
+
+		</th>
+	</tr>
+	<tr>
+		<td>state</td>
+		<th><select name="state" id="st">
+			<option value="">select state</option>
+			<option value="kera">kerala</option>
+			<option value="tam">Tamilnadu</option>
+			<option value="karnad">Karnadaka</option>
+			<option value="goa">Goa</option>
+			<option value="maha">Maharashtra</option>
+
+		</select></th>
+		</tr>
+		    <br>
+		<tr>
+			<th><input type="submit" name="sub" value="submit"></th>
+
+		</tr>
+	<script type="text/javascript">
+		function validate(){
+
+			var a= document.getElementById("name");
+			var b=document.getElementById("addr");
+			var c=document.getElementById("email");
+			var d=document.getElementById("pass");
+			var e=document.getElementById("ma1");
+			var f=document.getElementById("fe1");
+			var g=document.getElementsByName("course[]");
+			var h=document.getElementById("st");
+
+			if(a.value==""){
+				alert("enter your name ");
+				return false;
+			}
+			if(b.value==""){
+
+				alert("enter your address");
+				return false;
+			}
+			if(c.value==""){
+
+				alert("enter your email");
+				return false;
+			}
+			if(d.value==""){
+
+				alert("enter your password");
+				return false;
+			}
+			if(e.checked==false&&f.checked==false) {
+
+				alert("select your Gender");
+				return false;
+			}
+			if(g[0].checked==false && g[1].checked==false && g[2].checked==false && g[3].checked==false) {
+
+
+				alert("select your course");
+				return false;
+			}
+			if(h.value=="") {
+				alert("select your state");
+				return false;
+			}
+
+
+	}
+</script>
+</table>	
+</form>
+</body>
+</html>
